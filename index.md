@@ -9,7 +9,6 @@ ms.date: "06/21/2018"
 ---
 <div id="main" class="v2">
     <div class="container">
-        <h1> </h1>
         <ul class="cardsY panelContent featuredContent">
             <li>
                 <a href="/dotnet/csharp/quick-starts">

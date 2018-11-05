@@ -25,7 +25,7 @@
       "build_source_folder": ".",
       "build_output_subfolder": "e2eppe-core-docs",
       "locale": "en-us",
-      "xref_query_tags": ["/dotnet", "/uwp/api"],
+      "xref_query_tags": ["/core-docs-ppe", "/uwp/api"],
       "monikers": [
         "netframework-4.5.1",
         "netframework-4.5.2",
@@ -63,7 +63,7 @@
     }
   ],
   "notification_subscribers": [],
-  "xref_endpoint": "https://xref.docs.microsoft.com",
+  "xref_endpoint": "https://xrefppe.docs.microsoft.com",
   "branches_to_filter": ["master-sync-work", "live-sync-work"],
   "skip_source_output_uploading": false,
   "dependent_repositories": [

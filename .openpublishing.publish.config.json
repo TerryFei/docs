@@ -55,16 +55,6 @@
       "branch": "master"
     },
     {
-      "path_to_root": "_csharplang",
-      "url": "https://github.com/dotnet/csharplang",
-      "branch": "master"
-    },
-    {
-      "path_to_root": "_vblang",
-      "url": "https://github.com/dotnet/vblang",
-      "branch": "master"
-    },
-    {
       "path_to_root": "samples",
       "url": "https://github.com/dotnet/samples",
       "branch": "master",

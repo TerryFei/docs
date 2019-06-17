@@ -1,4 +1,4 @@
-# Conversions
+﻿# Conversions
 
 A ***conversion*** enables an expression to be treated as being of a particular type. A conversion may cause an expression of a given type to be treated as having a different type, or it may cause an expression without a type to get a type. Conversions can be ***implicit*** or ***explicit***, and this determines whether an explicit cast is required. For instance, the conversion from type `int` to type `long` is implicit, so expressions of type `int` can implicitly be treated as type `long`. The opposite conversion, from type `long` to type `int`, is explicit and so an explicit cast is required.
 
@@ -123,7 +123,7 @@ A value type has a boxing conversion to an interface type `I` if it has a boxing
 
 A value type has a boxing conversion to an interface type `I` if it has a boxing conversion to an interface or delegate type `I0` and `I0` is variance-convertible ([Variance conversion](interfaces.md#variance-conversion)) to `I`.
 
-Boxing a value of a *non_nullable_value_type* consists of allocating an object instance and copying the *value_type* value into that instance. A struct can be boxed to the type `System.ValueType`, since that is a base class for all structs ([Inheritance](structs.md#inheritance)).
+Boxing a value of a *non_nullable_value_type* consists of allocating an object instance and copying the *value_type* value into that instance. A struct can be boxed to the type `System.ValueType`, since that is a base class for all structs ([Inheritance](structs.md#inheritance)).
 
 Boxing a value of a *nullable_type* proceeds as follows:
 
@@ -309,7 +309,7 @@ A value type `S` has an unboxing conversion from an interface type `I` if it has
 
 A value type `S` has an unboxing conversion from an interface type `I` if it has an unboxing conversion from an interface or delegate type `I0` and either `I0` is variance-convertible to `I` or `I` is variance-convertible to `I0` ([Variance conversion](interfaces.md#variance-conversion)).
 
-An unboxing operation consists of first checking that the object instance is a boxed value of the given *value_type*, and then copying the value out of the instance. Unboxing a null reference to a *nullable_type* produces the null value of the *nullable_type*. A struct can be unboxed from the type `System.ValueType`, since that is a base class for all structs ([Inheritance](structs.md#inheritance)).
+An unboxing operation consists of first checking that the object instance is a boxed value of the given *value_type*, and then copying the value out of the instance. Unboxing a null reference to a *nullable_type* produces the null value of the *nullable_type*. A struct can be unboxed from the type `System.ValueType`, since that is a base class for all structs ([Inheritance](structs.md#inheritance)).
 
 Unboxing conversions are described further in [Unboxing conversions](types.md#unboxing-conversions).
 
@@ -366,7 +366,7 @@ class X<T>
 }
 ```
 
-If the direct explicit conversion of `t` to `int` were permitted, one might easily expect that `X<int>.F(7)` would return `7L`. However, it would not, because the standard numeric conversions are only considered when the types are known to be numeric at binding-time. In order to make the semantics clear, the above example must instead be written:
+If the direct explicit conversion of `t` to `int` were permitted, one might easily expect that `X<int>.F(7)` would return `7L`. However, it would not, because the standard numeric conversions are only considered when the types are known to be numeric at binding-time. In order to make the semantics clear, the above example must instead be written:
 ```csharp
 class X<T>
 {
@@ -738,7 +738,7 @@ The compile-time application of a conversion from a method group `E` to a delega
 *  The selected method `M` must be compatible ([Delegate compatibility](delegates.md#delegate-compatibility)) with the delegate type `D`, or otherwise, a compile-time error occurs.
 *  If the selected method `M` is an instance method, the instance expression associated with `E` determines the target object of the delegate.
 *  If the selected method M is an extension method which is denoted by means of a member access on an instance expression, that instance expression determines the target object of the delegate.
-*  The result of the conversion is a value of type `D`, namely a newly created delegate that refers to the selected method and target object.
+*  The result of the conversion is a value of type `D`, namely a newly created delegate that refers to the selected method and target object.
 *  Note that this process can lead to the creation of a delegate to an extension method, if the algorithm of [Method invocations](expressions.md#method-invocations) fails to find an instance method but succeeds in processing the invocation of `E(A)` as an extension method invocation ([Extension method invocations](expressions.md#extension-method-invocations)). A delegate thus created captures the extension method as well as its first argument.
 
 The following example demonstrates method group conversions:

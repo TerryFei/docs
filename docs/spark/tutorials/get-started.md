@@ -127,3 +127,6 @@ In this tutorial, you learned how to:
 Check out the resources page to learn more.
 > [!div class="nextstepaction"]
 > [.NET for Apache Spark Resources](../resources/index.md)
+
+Edit for regular perf testing
+

@@ -25,9 +25,14 @@
       "build_source_folder": ".",
       "build_output_subfolder": "e2eppe-core-docs",
       "locale": "en-us",
-      "xref_query_tags": ["/dotnet", "/uwp/api"],
+      "xref_query_tags": [
+        "/dotnet",
+        "/uwp/api"
+      ],
       "monikers": [],
-      "filemap_share_depots": ["MSDN.e2e-ppe-dotnetapidocs"],
+      "filemap_share_depots": [
+        "MSDN.e2e-ppe-dotnetapidocs"
+      ],
       "open_to_public_contributors": true,
       "type_mapping": {
         "Conceptual": "Content",
@@ -41,7 +46,10 @@
   ],
   "notification_subscribers": [],
   "xref_endpoint": "https://xref.docs.microsoft.com",
-  "branches_to_filter": ["master-sync-work", "live-sync-work"],
+  "branches_to_filter": [
+    "master-sync-work",
+    "live-sync-work"
+  ],
   "skip_source_output_uploading": false,
   "dependent_repositories": [
     {
@@ -79,5 +87,11 @@
       "url": "https://github.com/dotnet/machinelearning-samples",
       "branch": "master"
     }
-  ]
+  ],
+  "docs_build_engine": {
+    "name": "docfx_v3"
+  },
+  "feature_flags": {
+    "use_v2_github_user_cache": true
+  }
 }

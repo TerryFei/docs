@@ -39,6 +39,9 @@
       "template_folder": "_themes"
     }
   ],
+  "docs_build_engine":{
+    "name": "docfx_v3"
+   },
   "notification_subscribers": [],
   "xref_endpoint": "https://xref.docs.microsoft.com",
   "branches_to_filter": ["master-sync-work", "live-sync-work"],

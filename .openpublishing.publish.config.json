@@ -25,12 +25,13 @@
       "docset_name": "e2eppe-core-docs",
       "build_source_folder": ".",
       "build_output_subfolder": "e2eppe-core-docs",
-      "locale": "en-us",      
+      "locale": "en-us",
       "xref_query_tags": ["/dotnet", "/uwp/api"],
       "monikers": [],
       "filemap_share_depots": ["MSDN.e2e-ppe-dotnetapidocs"],
       "open_to_public_contributors": true,
       "type_mapping": {
+        "ZonePivotGroups": "Toc",
         "Conceptual": "Content",
         "ManagedReference": "Content",
         "RestApi": "Content",
@@ -58,12 +59,14 @@
     {
       "path_to_root": "_csharplang",
       "url": "https://github.com/dotnet/csharplang",
-      "branch": "master"
+      "branch": "master",
+      "include_in_build": true
     },
     {
       "path_to_root": "_vblang",
       "url": "https://github.com/dotnet/vblang",
-      "branch": "master"
+      "branch": "master",
+      "include_in_build": true
     },
     {
       "path_to_root": "samples",
@@ -78,5 +81,8 @@
       "url": "https://github.com/dotnet/machinelearning-samples",
       "branch": "master"
     }
-  ]
+  ],
+  "docs_build_engine": {
+    "name": "docfx_v3"
+  }
 }

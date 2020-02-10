@@ -5,7 +5,7 @@ on:
 
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
     steps:
     - uses: actions/checkout@v1
     - uses: timheuer/issue-notifier@v1.0.2
@@ -17,3 +17,4 @@ jobs:
         subject: 'BC:'
         subjectPrefix: 'BC:'
         labelsToMonitor: "breaking-change"
+  

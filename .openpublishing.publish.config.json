@@ -1,17 +1,13 @@
 {
   "docsets_to_publish": [
     {
-      "docset_name": "core-docs",
+      "docset_name": "e2eppe-core-docs",
       "build_source_folder": ".",
-      "build_output_subfolder": ".",
+      "build_output_subfolder": "e2eppe-core-docs",
       "locale": "en-us",
       "monikers": [],
-      "xref_query_tags": [
-        "/uwp/api"
-      ],
-      "filemap_share_depots": [
-        "VS.dotnet-api-docs"
-      ],
+      "xref_query_tags": ["/dotnet", "/uwp/api"],
+      "filemap_share_depots": ["MSDN.e2e-ppe-dotnetapidocs"],
       "open_to_public_contributors": true,
       "type_mapping": {
         "ZonePivotGroups": "Toc",
@@ -24,6 +20,7 @@
       "template_folder": "_themes"
     }
   ],
+  "xref_endpoint": "https://xref.docs.microsoft.com",
   "notification_subscribers": [],
   "sync_notification_subscribers": [],
   "branches_to_filter": [],

@@ -1,6 +1,6 @@
 ---
 title: "Breaking change: Some TableLayoutSettings properties throw InvalidEnumArgumentException"
-description: Learn about the breaking change in .NET 6.0 where some TableLayoutSettings APIs now throw an InvalidEnumArgumentException for invalid arguments.
+description: Learn about the breaking change in .NET 6 where some TableLayoutSettings APIs now throw an InvalidEnumArgumentException for invalid arguments.
 ms.date: 01/18/2021
 ---
 # Selected TableLayoutSettings properties throw InvalidEnumArgumentException
@@ -9,7 +9,11 @@ Selected <xref:System.Windows.Forms.TableLayoutSettings> properties now throw an
 
 ## Change description
 
-In previous .NET versions, these properties throw an <xref:System.ArgumentOutOfRangeException> if you attempt to assign an incorrect value. Starting in .NET 6.0, these properties throw an <xref:System.ComponentModel.InvalidEnumArgumentException> in such cases.
+In previous .NET versions, these properties throw an <xref:System.ArgumentOutOfRangeException> if you attempt to assign an incorrect value. Starting in .NET 6, these properties throw an <xref:System.ComponentModel.InvalidEnumArgumentException> in such cases.
+
+## Change category
+
+This change affects [binary compatibility](../../categories.md#binary-compatibility).
 
 ## Reason for change
 
@@ -17,7 +21,7 @@ Throwing <xref:System.ComponentModel.InvalidEnumArgumentException> is in line wi
 
 ## Version introduced
 
-.NET 6.0
+.NET 6
 
 ## Recommended action
 
@@ -26,22 +30,5 @@ Throwing <xref:System.ComponentModel.InvalidEnumArgumentException> is in line wi
 
 ## Affected APIs
 
-The following table lists the affected properties:
-
-| Property | Version changed |
-|-|-|-|-|
-| <xref:System.Windows.Forms.TableLayoutPanel.CellBorderStyle?displayProperty=fullName> | Preview 1 |
-| <xref:System.Windows.Forms.TableLayoutPanel.GrowStyle?displayProperty=fullName> | Preview 1 |
-
-<!--
-
-### Affected APIs
-
-- `P:System.Windows.Forms.TableLayoutPanel.CellBorderStyle`
-- `P:System.Windows.Forms.TableLayoutPanel.GrowStyle`
-
-### Category
-
-Windows Forms
-
--->
+- <xref:System.Windows.Forms.TableLayoutPanel.CellBorderStyle?displayProperty=fullName>
+- <xref:System.Windows.Forms.TableLayoutPanel.GrowStyle?displayProperty=fullName>

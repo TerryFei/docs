@@ -1,25 +1,24 @@
 ---
 title: "Breaking change: Obsoleted and removed APIs"
 description: "Learn about the breaking change in ASP.NET Core 6.0 titled Obsoleted and removed APIs"
-author: scottaddie
 ms.author: scaddie
 ms.date: 02/16/2021
 ---
 # Obsoleted and removed APIs
 
-In ASP.NET Core 6.0 Preview 1, several APIs were either removed or marked as obsolete.
+Several APIs have been either removed or marked as obsolete.
 
 ## Version introduced
 
-6.0 Preview 1
+ASP.NET Core 6.0
 
 ## Old behavior
 
-In ASP.NET Core 5.0, the APIs weren't removed or obsolete.
+In ASP.NET Core 5.0 and previous versions, the APIs weren't removed or obsolete.
 
 ## New behavior
 
-In ASP.NET Core 6.0, the APIs are removed or obsoleted.
+The APIs are removed or obsoleted.
 
 ## Reason for change
 

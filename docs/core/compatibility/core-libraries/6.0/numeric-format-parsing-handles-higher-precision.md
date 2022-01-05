@@ -1,6 +1,6 @@
 ---
 title: "Breaking change: Standard numeric format parsing precision"
-description: Learn about the .NET 6.0 breaking change in core .NET libraries where standard numeric format parsing now handles higher precisions.
+description: Learn about the .NET 6 breaking change in core .NET libraries where standard numeric format parsing now handles higher precisions.
 ms.date: 02/26/2021
 ---
 # Standard numeric format parsing precision
@@ -31,7 +31,7 @@ The following table shows the behavior changes for various format strings.
 
 ## Version introduced
 
-6.0 Preview 2
+.NET 6
 
 ## Reason for change
 

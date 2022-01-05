@@ -2,7 +2,7 @@
 title: Logging differences between ASP.NET MVC and ASP.NET Core
 description: How is logging different between ASP.NET MVC and Web API apps and ASP.NET Core apps?
 author: ardalis
-ms.date: 11/13/2020
+ms.date: 12/10/2021
 ---
 
 # Logging differences between ASP.NET MVC and ASP.NET Core
@@ -50,5 +50,5 @@ You can reference the `Microsoft.Extensions.Logging` package from .NET Framework
 - [Microsoft.Extensions.Logging NuGet Package](https://www.nuget.org/packages/microsoft.extensions.logging/)
 
 >[!div class="step-by-step"]
->[Previous](middleware-modules-handlers.md)
->[Next](routing-differences.md)
+>[Previous](routing-differences.md)
+>[Next](comparing-razor-pages-aspnet-mvc.md)

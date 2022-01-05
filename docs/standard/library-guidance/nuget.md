@@ -80,7 +80,7 @@ NuGet packages with a version suffix are considered [pre-release](/nuget/create-
 
 ✔️ DO publish a pre-release package when testing, previewing, or experimenting.
 
-✔️ DO publish a stable package when its ready so other stable packages can reference it.
+✔️ DO publish a stable package when it's ready so other stable packages can reference it.
 
 ## Symbol packages
 
@@ -89,7 +89,7 @@ Symbol files (`*.pdb`) are produced by the .NET compiler alongside assemblies. S
 NuGet.org hosts its own [symbols server repository](/nuget/create-packages/symbol-packages-snupkg#nugetorg-symbol-server). Developers can use the symbols published to the NuGet.org symbol server by adding `https://symbols.nuget.org/download/symbols` to their [symbol sources in Visual Studio](/visualstudio/debugger/specify-symbol-dot-pdb-and-source-files-in-the-visual-studio-debugger).
 
 > [!IMPORTANT]
-> The NuGet.org symbol server only supports the new [portable symbol files](https://github.com/dotnet/core/blob/master/Documentation/diagnostics/portable_pdb.md) (`*.pdb`) created by SDK-style projects.
+> The NuGet.org symbol server only supports the new [portable symbol files](https://github.com/dotnet/core/blob/main/Documentation/diagnostics/portable_pdb.md) (`*.pdb`) created by SDK-style projects.
 >
 > To use the NuGet.org symbol server when debugging a .NET library, developers must have Visual Studio 2017 version 15.9 or later.
 

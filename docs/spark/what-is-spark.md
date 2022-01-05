@@ -4,6 +4,7 @@ description: Learn about Apache Spark and big data scenarios.
 ms.date: 10/15/2019
 ms.topic: conceptual
 ms.custom: mvc
+recommendations: false
 #Customer intent: As a developer, I want an introduction to Apache Spark.
 ---
 
@@ -13,7 +14,7 @@ ms.custom: mvc
 
 ## Common big data scenarios
 
-You might consider a big data architecture if you need to store and process large volumes of data, transform unstructured data, or processes streaming data. Spark is a general-purpose distributed processing engine that can be used for several big data scenarios.
+You might consider a big data architecture if you need to store and process large volumes of data, transform unstructured data, or process streaming data. Spark is a general-purpose distributed processing engine that can be used for several big data scenarios.
 
 ### Extract, transform, and load (ETL)
 
@@ -49,9 +50,11 @@ If you're working with structured (formatted) data, you can use SQL queries in y
 
 ## Apache Spark architecture
 
-Apache Spark, which uses the master/worker architecture, has three main components: the driver, executors, and cluster manager.
+Apache Spark has three main components: the driver, executors, and cluster manager. Spark applications run as independent sets of processes on a cluster, coordinated by the driver program.
 
 ![Apache Spark architecture](media/spark-architecture.png)
+
+For more information, see [Cluster mode overview](https://spark.apache.org/docs/latest/cluster-overview.html).
 
 ### Driver
 

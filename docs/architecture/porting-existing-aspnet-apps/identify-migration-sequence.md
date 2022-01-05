@@ -2,7 +2,7 @@
 title: Identify sequence of projects to migrate
 description: Large apps typically aren't migrated to new platforms all at once, but in a series of smaller steps. Learn how to plan the steps for migrating an ASP.NET MVC app to ASP.NET Core.
 author: ardalis
-ms.date: 11/13/2020
+ms.date: 12/10/2021
 ---
 
 # Identify sequence of projects to migrate
@@ -23,7 +23,9 @@ Figure 3-2 shows the installer for the [.NET Portability Analyzer Visual Studio 
 
 **Figure 3-2.** .NET Portability Analyzer installer.
 
-The extension supports Visual Studio 2017 and later. Once installed, you configure it from the **Analyze** > **Portability Analyzer Settings** menu, as shown in Figure 3-3.
+The extension currently supports Visual Studio 2017 and 2019. Visual Studio 2022 support is planned.
+
+Once installed, you configure it from the **Analyze** > **Portability Analyzer Settings** menu, as shown in Figure 3-3.
 
 ![Configure the .NET Portability Analyzer extension](./media/Figure3-3.png)
 
@@ -56,8 +58,8 @@ Watch an overview of how to employ this approach in this [dotNetConf presentatio
 
 - Migrate third-party NuGet dependencies
 - Migrate apps to use new *.csproj* file format
-- Migrate apps to ASP.NET Core (targeting .NET Framework)
 - Update internal NuGet dependencies to .NET Standard
+- Migrate apps to ASP.NET Core (targeting .NET Framework)
 - Update all apps to target .NET Core 3.1
 
 When automating a large suite of apps, it helps significantly if they follow consistent coding guidelines and project organization. Automation efforts rely on this consistency to be effective. In addition to parsing and migrating project files, common code patterns can be migrated automatically. Some code pattern examples include differences in how controller actions are declared or how they return results.

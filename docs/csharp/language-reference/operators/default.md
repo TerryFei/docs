@@ -1,6 +1,6 @@
 ---
 title: "default value expressions - C# reference"
-description: "Use the default value expressions to obtain the default value of a type"
+description: "Use the default value expressions to obtain the default value of a type."
 ms.date: 03/13/2020
 f1_keywords:
   - "default_CSharpKeyword"
@@ -11,7 +11,7 @@ helpviewer_keywords:
 
 A default value expression produces the [default value](../builtin-types/default-values.md) of a type. There are two kinds of default value expressions: the [default operator](#default-operator) call and a [default literal](#default-literal).
 
-You also use the `default` keyword as the default case label within a [`switch` statement](../keywords/switch.md).
+You also use the `default` keyword as the default case label within a [`switch` statement](../statements/selection-statements.md#the-switch-statement).
 
 ## default operator
 
@@ -26,7 +26,7 @@ Beginning with C# 7.1, you can use the `default` literal to produce the default 
 - In the assignment or initialization of a variable.
 - In the declaration of the default value for an [optional method parameter](../../methods.md#optional-parameters-and-arguments).
 - In a method call to provide an argument value.
-- In a [`return` statement](../keywords/return.md) or as an expression in an [expression-bodied member](../../programming-guide/statements-expressions-operators/expression-bodied-members.md).
+- In a [`return` statement](../statements/jump-statements.md#the-return-statement) or as an expression in an [expression-bodied member](../../programming-guide/statements-expressions-operators/expression-bodied-members.md).
 
 The following example shows the usage of the `default` literal:
 

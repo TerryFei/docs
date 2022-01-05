@@ -1,7 +1,7 @@
 ---
 title: Migrate to hybrid cloud scenarios
 description: Modernize existing .NET applications with Azure Cloud and Windows containers | Migrate to hybrid cloud scenarios
-ms.date: 12/21/2020
+ms.date: 12/12/2021
 ---
 # Migrate to hybrid cloud scenarios
 
@@ -49,11 +49,11 @@ Microsoft Azure Stack Development Kit is a single-node deployment of Azure Stack
 
 - **Active Directory Service Accounts for Windows Containers**
 
-    <https://docs.microsoft.com/virtualization/windowscontainers/manage-containers/manage-serviceaccounts>
+    [https://docs.microsoft.com/virtualization/windowscontainers/manage-containers/manage-serviceaccounts](/virtualization/windowscontainers/manage-containers/manage-serviceaccounts)
 
 - **Create a container with Active Directory support**
 
-    <https://docs.microsoft.com/archive/blogs/containerstuff/create-a-container-with-active-directory-support>
+    [https://docs.microsoft.com/archive/blogs/containerstuff/create-a-container-with-active-directory-support](/archive/blogs/containerstuff/create-a-container-with-active-directory-support)
 
 - **Azure Hybrid Benefit licensing**
 

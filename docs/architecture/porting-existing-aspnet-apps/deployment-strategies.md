@@ -2,7 +2,7 @@
 title: Deployment strategies
 description: What deployment strategies can teams use while migrating from ASP.NET to ASP.NET Core? Can an incremental migration allow side-by-side deployment of .NET Framework and .NET Core apps, providing a seamless end user experience?
 author: ardalis
-ms.date: 11/13/2020
+ms.date: 12/10/2021
 ---
 
 # Deployment strategies
@@ -16,7 +16,7 @@ Because .NET Core runs on Linux, you'll find some hosting options available that
 * Your organization has infrastructure or expertise.
 * Hosting providers offer attractive features or pricing for Linux-based hosting.
 
-.NET Core opens to door to these options.
+.NET Core opens the door to these options.
 
 ## Cloud native development
 

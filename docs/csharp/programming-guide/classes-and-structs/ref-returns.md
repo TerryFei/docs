@@ -1,7 +1,7 @@
 ---
 title: "Ref return values and ref locals (C# Guide)"
 description: "Learn how to define and use ref return and ref local values"
-ms.date: "04/04/2018"
+ms.date: "07/11/2021"
 ---
 # Ref returns and ref locals
 
@@ -30,7 +30,7 @@ In addition, reference return values are not allowed on async methods. An asynch
 A method that returns a *reference return value* must satisfy the following two conditions:
 
 - The method signature includes the [ref](../../language-reference/keywords/ref.md) keyword in front of the return type.
-- Each [return](../../language-reference/keywords/return.md) statement in the method body includes the [ref](../../language-reference/keywords/ref.md) keyword in front of the name of the returned instance.
+- Each [return](../../language-reference/statements/jump-statements.md#the-return-statement) statement in the method body includes the [ref](../../language-reference/keywords/ref.md) keyword in front of the name of the returned instance.
 
 The following example shows a method that satisfies those conditions and returns a reference to a `Person` object named `p`:
 
@@ -113,7 +113,7 @@ C# 7.3 to use ref local reassignment:
 [!code-csharp[ref-returns](../../../../samples/snippets/csharp/programming-guide/ref-returns/NumberStoreUpdated.cs#1)]
 
 This second version is more efficient with longer sequences in scenarios where the number sought is
-closer to the end of the array.
+closer to the end of the array, as the array is iterated from end towards the beginning, causing fewer items to be examined.
 
 ## See also
 

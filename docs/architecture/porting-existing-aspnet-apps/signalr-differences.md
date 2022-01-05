@@ -2,7 +2,7 @@
 title: Compare ASP.NET SignalR and ASP.NET Core SignalR
 description: How does ASP.NET Core SignalR differ from its predecessor, ASP.NET SignalR?
 author: ardalis
-ms.date: 11/13/2020
+ms.date: 12/10/2021
 ---
 
 # Compare ASP.NET SignalR and ASP.NET Core SignalR
@@ -18,7 +18,7 @@ ASP.NET Core SignalR is incompatible with clients or servers using ASP.NET Signa
 - ASP.NET Core SignalR requires sticky sessions; ASP.NET SignalR doesn't.
 - ASP.NET Core simplifies the connection model; connections are only made to a single hub.
 - ASP.NET Core SignalR supports streaming data from the hub to the client.
-- ASP.NET Core SignalR doesn't support passing state between clients and the hub.
+- ASP.NET Core SignalR doesn't support passing state between clients and the hub (but method calls still allow passing information between hubs and clients).
 - The `PersistentConnection` class doesn't exist in ASP.NET Core SignalR.
 - ASP.NET SignalR supports SQL Server and Redis. ASP.NET Core SignalR supports [Azure SignalR](/azure/azure-signalr/) and Redis.
 

@@ -34,7 +34,7 @@ One of the most common use cases of tuples is as a method return type. That is, 
 
 As the preceding example shows, you can work with the returned tuple instance directly or [deconstruct](#tuple-assignment-and-deconstruction) it in separate variables.
 
-You can also use tuple types instead of [anonymous types](../../programming-guide/classes-and-structs/anonymous-types.md); for example, in LINQ queries. For more information, see [Choosing between anonymous and tuple types](../../../standard/base-types/choosing-between-anonymous-and-tuple.md).
+You can also use tuple types instead of [anonymous types](../../fundamentals/types/anonymous-types.md); for example, in LINQ queries. For more information, see [Choosing between anonymous and tuple types](../../../standard/base-types/choosing-between-anonymous-and-tuple.md).
 
 Typically, you use tuples to group loosely related data elements. That is usually useful within private and internal utility methods. In the case of public API, consider defining a [class](../keywords/class.md) or a [structure](struct.md) type.
 
@@ -88,7 +88,7 @@ You can also use the assignment operator `=` to *deconstruct* a tuple instance i
 
   [!code-csharp-interactive[existing variables](snippets/shared/ValueTuples.cs#DeconstructExisting)]
 
-For more information about deconstruction of tuples and other types, see [Deconstructing tuples and other types](../../deconstruct.md).
+For more information about deconstruction of tuples and other types, see [Deconstructing tuples and other types](../../fundamentals/functional/deconstruct.md).
 
 ## Tuple equality
 
@@ -117,9 +117,9 @@ Typically, you refactor a method that has [`out` parameters](../keywords/out-par
 
 C# tuples, which are backed by <xref:System.ValueTuple?displayProperty=nameWithType> types, are different from tuples that are represented by <xref:System.Tuple?displayProperty=nameWithType> types. The main differences are as follows:
 
-- `ValueTuple` types are [value types](value-types.md). `Tuple` types are [reference types](../keywords/reference-types.md).
-- `ValueTuple` types are mutable. `Tuple` types are immutable.
-- Data members of `ValueTuple` types are fields. Data members of `Tuple` types are properties.
+- `System.ValueTuple` types are [value types](value-types.md). `System.Tuple` types are [reference types](../keywords/reference-types.md).
+- `System.ValueTuple` types are mutable. `System.Tuple` types are immutable.
+- Data members of `System.ValueTuple` types are fields. Data members of `System.Tuple` types are properties.
 
 ## C# language specification
 

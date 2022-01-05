@@ -1,7 +1,7 @@
 ---
 title: Build resilient services ready for the cloud. Embrace transient failures in the cloud
 description: Modernize existing .NET applications with Azure Cloud and Windows containers | Build resilient services ready for the cloud. Embrace transient failures in the cloud
-ms.date: 12/21/2020
+ms.date: 12/12/2021
 ---
 # Build resilient services ready for the cloud: Embrace transient failures in the cloud
 
@@ -45,7 +45,7 @@ To learn how to implement strategies for handling partial failures in the cloud,
 
 - **The Transient Fault Handling Application Block**
 
-- <https://docs.microsoft.com/previous-versions/msp-n-p/hh680934(v=pandp.50)>
+- [https://docs.microsoft.com/previous-versions/msp-n-p/hh680934(v=pandp.50)](/previous-versions/msp-n-p/hh680934(v=pandp.50))
 
 - **Polly library for resilient HTTP communication**
 

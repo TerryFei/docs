@@ -3,9 +3,10 @@ title: 'Tutorial: Detect objects using an ONNX deep learning model'
 description: This tutorial illustrates how to use a pre-trained ONNX deep learning model in ML.NET to detect objects in images.
 author: luisquintanilla
 ms.author: luquinta
-ms.date: 06/30/2020
+ms.date: 11/11/2021
 ms.topic: tutorial
 ms.custom: mvc
+recommendations: false
 #Customer intent: As a developer, I want to use ML.NET so that I can use a pre-trained model in an object detection scenario to detect objects in images using ONNX.
 ---
 
@@ -26,7 +27,7 @@ In this tutorial, you learn how to:
 
 ## Pre-requisites
 
-- [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) or later or Visual Studio 2017 version 15.6 or later with the ".NET Core cross-platform development" workload installed.
+- [Visual Studio 2022](https://visualstudio.microsoft.com/downloads/).
 - [Microsoft.ML NuGet Package](https://www.nuget.org/packages/Microsoft.ML/)
 - [Microsoft.ML.ImageAnalytics NuGet Package](https://www.nuget.org/packages/Microsoft.ML.ImageAnalytics/)
 - [Microsoft.ML.OnnxTransformer NuGet Package](https://www.nuget.org/packages/Microsoft.ML.OnnxTransformer/)
@@ -35,11 +36,13 @@ In this tutorial, you learn how to:
 
 ## ONNX object detection sample overview
 
-This sample creates a .NET core console application that detects objects within an image using a pre-trained deep learning ONNX model. The code for this sample can be found on the [dotnet/machinelearning-samples repository](https://github.com/dotnet/machinelearning-samples/tree/master/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx) on GitHub.
+This sample creates a .NET core console application that detects objects within an image using a pre-trained deep learning ONNX model. The code for this sample can be found on the [dotnet/machinelearning-samples repository](https://github.com/dotnet/machinelearning-samples/tree/main/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx) on GitHub.
 
 ## What is object detection?
 
-Object detection is a computer vision problem. While closely related to image classification, object detection performs image classification at a more granular scale. Object detection both locates _and_ categorizes entities within images. Use object detection when images contain multiple objects of different types.
+Object detection is a computer vision problem. While closely related to image classification, object detection performs image classification at a more granular scale. Object detection both locates _and_ categorizes entities within images. Object detection models are commonly trained using deep learning and neural networks. See [Deep learning vs machine learning](/azure/machine-learning/concept-deep-learning-vs-machine-learning) for more information.
+
+Use object detection when images contain multiple objects of different types.
 
 ![Screenshots showing Image Classification versus Object Classification.](./media/object-detection-onnx/img-classification-obj-detection.png)
 
@@ -76,13 +79,15 @@ The pre-trained Tiny YOLOv2 model is stored in ONNX format, a serialized represe
 
 ![Data flow of ONNX file into the ONNX Runtime.](./media/object-detection-onnx/onnx-ml-net-integration.png)
 
-## Set up the .NET Core project
+## Set up the .NET Console project
 
 Now that you have a general understanding of what ONNX is and how Tiny YOLOv2 works, it's time to build the application.
 
 ### Create a console application
 
-1. Create a **.NET Core Console Application** called "ObjectDetection".
+1. Create a C# **Console Application** called "ObjectDetection". Click the **Next** button.
+
+1. Choose .NET 6 as the framework to use. Click the **Create** button.
 
 1. Install the **Microsoft.ML NuGet Package**:
 
@@ -96,19 +101,13 @@ Now that you have a general understanding of what ONNX is and how Tiny YOLOv2 wo
 
 ### Prepare your data and pre-trained model
 
-1. Download [The project assets directory zip file](https://github.com/dotnet/machinelearning-samples/raw/master/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx/ObjectDetectionConsoleApp/assets.zip) and unzip.
+1. Download [The project assets directory zip file](https://github.com/dotnet/machinelearning-samples/raw/main/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx/ObjectDetectionConsoleApp/assets.zip) and unzip.
 
 1. Copy the `assets` directory into your *ObjectDetection* project directory. This directory and its subdirectories contain the image files (except for the Tiny YOLOv2 model, which you'll download and add in the next step) needed for this tutorial.
 
-1. Download the [Tiny YOLOv2 model](https://onnxzoo.blob.core.windows.net/models/opset_8/tiny_yolov2/tiny_yolov2.tar.gz) from the [ONNX Model Zoo](https://github.com/onnx/models/tree/master/vision/object_detection_segmentation/tiny-yolov2), and unzip.
+1. Download the Tiny YOLOv2 model from the [ONNX Model Zoo](https://github.com/onnx/models/tree/master/vision/object_detection_segmentation/tiny-yolov2).
 
-    Open the command prompt and enter the following command:
-
-    ```shell
-    tar -xvzf tiny_yolov2.tar.gz
-    ```
-
-1. Copy the extracted `model.onnx` file from the directory just unzipped into your *ObjectDetection* project `assets\Model` directory and rename it to `TinyYolo2_model.onnx`. This directory contains the model needed for this tutorial.
+1. Copy the `model.onnx` file into your *ObjectDetection* project `assets\Model` directory and rename it to `TinyYolo2_model.onnx`. This directory contains the model needed for this tutorial.
 
 1. In Solution Explorer, right-click each of the files in the asset directory and subdirectories and select **Properties**. Under **Advanced**, change the value of **Copy to Output Directory** to **Copy if newer**.
 
@@ -120,11 +119,11 @@ Open the *Program.cs* file and add the following additional `using` statements t
 
 Next, define the paths of the various assets.
 
-1. First, add the `GetAbsolutePath` method below the `Main` method in the `Program` class.
+1. First, create the `GetAbsolutePath` method at the bottom of the **Program.cs** file.
 
     [!code-csharp [GetAbsolutePath](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx/ObjectDetectionConsoleApp/Program.cs#L66-L74)]
 
-1. Then, inside the `Main` method, create fields to store the location of your assets.
+1. Then, below the using statements, create fields to store the location of your assets.
 
     [!code-csharp [AssetDefinition](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx/ObjectDetectionConsoleApp/Program.cs#L17-L21)]
 
@@ -169,11 +168,11 @@ Create your prediction class in the *DataStructures* directory.
 
     - `PredictedLabel` contains the dimensions, objectness score, and class probabilities for each of the bounding boxes detected in an image.
 
-### Initialize variables in Main
+### Initialize variables
 
 The [MLContext class](xref:Microsoft.ML.MLContext) is a starting point for all ML.NET operations, and initializing `mlContext` creates a new ML.NET environment that can be shared across the model creation workflow objects. It's similar, conceptually, to `DBContext` in Entity Framework.
 
-Initialize the `mlContext` variable with a new instance of `MLContext` by adding the following line to the `Main` method of *Program.cs* below the `outputFolder` field.
+Initialize the `mlContext` variable with a new instance of `MLContext` by adding the following line below the `outputFolder` field.
 
 [!code-csharp [InitMLContext](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx/ObjectDetectionConsoleApp/Program.cs#L24)]
 
@@ -542,7 +541,7 @@ Now that all of the setup is complete, it's time to detect some objects. Start o
 
 ### Score and parse model outputs
 
-Inside the `Main` method of your *Program.cs* class, add a try-catch statement.
+Below the creation of the `mlContext` variable, add a try-catch statement.
 
 ```csharp
 try
@@ -574,7 +573,7 @@ Once the model output has been processed, it's time to draw the bounding boxes o
 After the model has scored the images and the outputs have been processed, the bounding boxes have to be drawn on the image. To do so, add a method called `DrawBoundingBox` below the `GetAbsolutePath` method inside of *Program.cs*.
 
 ```csharp
-private static void DrawBoundingBox(string inputImageLocation, string outputImageLocation, string imageName, IList<YoloBoundingBox> filteredBoundingBoxes)
+void DrawBoundingBox(string inputImageLocation, string outputImageLocation, string imageName, IList<YoloBoundingBox> filteredBoundingBoxes)
 {
 
 }
@@ -634,7 +633,7 @@ Outside of the for-each loop, add code to save the images in the `outputDirector
 
 [!code-csharp [SaveImage](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx/ObjectDetectionConsoleApp/Program.cs#L125-L130)]
 
-For additional feedback that the application is making predictions as expected at runtime, add a method called `LogDetectedObjects` below the `DrawBoundingBox` method in the *Program.cs* file to output the detected objects to the console.
+For additional feedback that the application is making predictions as expected at run time, add a method called `LogDetectedObjects` below the `DrawBoundingBox` method in the *Program.cs* file to output the detected objects to the console.
 
 [!code-csharp [LogOutputs](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx/ObjectDetectionConsoleApp/Program.cs#L133-L143)]
 
@@ -705,7 +704,7 @@ To see the images with bounding boxes, navigate to the `assets/images/output/` d
 
 Congratulations! You've now successfully built a machine learning model for object detection by reusing a pre-trained `ONNX` model in ML.NET.
 
-You can find the source code for this tutorial at the [dotnet/machinelearning-samples](https://github.com/dotnet/machinelearning-samples/tree/master/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx) repository.
+You can find the source code for this tutorial at the [dotnet/machinelearning-samples](https://github.com/dotnet/machinelearning-samples/tree/main/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx) repository.
 
 In this tutorial, you learned how to:
 > [!div class="checklist"]
@@ -718,4 +717,4 @@ In this tutorial, you learned how to:
 
 Check out the Machine Learning samples GitHub repository to explore an expanded object detection sample.
 > [!div class="nextstepaction"]
-> [dotnet/machinelearning-samples GitHub repository](https://github.com/dotnet/machinelearning-samples/tree/master/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx)
+> [dotnet/machinelearning-samples GitHub repository](https://github.com/dotnet/machinelearning-samples/tree/main/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx)

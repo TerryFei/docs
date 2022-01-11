@@ -87,7 +87,7 @@
   },
   "docs_build_engine": {
     "name": "docfx_v3",
-	"version": "3.0.0-test-202201100537"
+	"version": "3.0.0-test-202201110556"
   },
   "redirection_files": [
     ".openpublishing.redirection.json",

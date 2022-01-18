@@ -6,10 +6,6 @@
       "build_output_subfolder": "e2eppe-core-docs-terry",
       "locale": "en-us",
       "monikers": [],
-      "xref_query_tags": [
-        "/dotnet",
-        "/uwp/api"
-      ],
       "filemap_share_depots": [
         "MSDN.e2e-ppe-dotnetapidocs"
       ],
